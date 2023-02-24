@@ -1,0 +1,8 @@
+Tipos genericos que se pueden utilizar:
+
+E  | Element (utilizado generalmente por el framework de colecciones de Java)
+K  | Key (llave, utilizado en mapas)
+N  | Number (utilizado para numeros)
+T  | Type (representa un tipo, es decir, una clase)
+V  | Value (representa un valor, tambien se usa en ) 
+S, U, V, etc  | Usado para representar otros tipos.

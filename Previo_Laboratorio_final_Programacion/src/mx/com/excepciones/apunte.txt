@@ -1,0 +1,19 @@
+Tipos de excepciones en el api de Java
+
+La clase padre de todas las excepciones es Throweable la clase hija o subclase es 
+Exception, a partir de esta clase podemos crear nuestras propias clases de excepcion.
+
+Exception tiene dos subclases RuntimeException y SQLException.
+
+RuntimeException tiene una subclase llamada NullPointerException.
+
+Toda clase que herede Exception es considera "check exception" significa que 
+el compilador nos obligara a usar un try catch a esa excepcion o no se ejecutara
+el programa.
+
+Las clases que heredan de RuntimeException se conocen como "uncheck exception" 
+es decir que el compilador no nos obligara a usar un try catch para que se
+ejecute el programa.
+
+NOTA se recomienda utilizar excepciones de tipo RuntimeException
+

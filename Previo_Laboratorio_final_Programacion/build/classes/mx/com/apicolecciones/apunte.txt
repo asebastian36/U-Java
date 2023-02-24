@@ -1,0 +1,10 @@
+Api de colecciones en Java
+
+Hay dos grandes secciones:
+
+las colecciones que son subinterfaces de la interfaz Collection estas son Set y List.
+
+la implementacion de Set es HashSet y la implementacion de List es ArrayList.
+
+Por otro lado esta la interfaz Map su implementacion es HashMap un mapa es una 
+coleccion de elementos que usa la asociacion llave valor.
