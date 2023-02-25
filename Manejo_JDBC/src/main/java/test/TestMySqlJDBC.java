@@ -17,16 +17,16 @@ public class TestMySqlJDBC {
             //  este otro igual arroja una excepcion
             
             //  primera conexion abierta
-            Connection conexion = DriverManager.getConnection(url, "root", "admin");
+            Connection conexion = DriverManager.getConnection(url, "root", "L4c1b0rgv4c4#");
             
             //  segunda conexion abierta
             Statement instruccion = conexion.createStatement();
-            String sql = "SELECT id_persona, nombre, apellido, email, telefono FROM persona";
+            String sql = "SELECT idpersona, nombre, apellido, email, telefono FROM persona";
             
             //  tercera conexion abierta
             ResultSet resultado = instruccion.executeQuery(sql);
             while(resultado.next()) {
-                System.out.print("Id Persona:" + resultado.getInt("id_persona"));
+                System.out.print("Id Persona:" + resultado.getInt("idpersona"));
                 System.out.print(" Nombre:" + resultado.getString("nombre") + " ");
                 System.out.print(" Apellido:" + resultado.getString("apellido") + " ");
                 System.out.print(" Email:" + resultado.getString("email") + " ");

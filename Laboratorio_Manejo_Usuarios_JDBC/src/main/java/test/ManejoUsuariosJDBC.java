@@ -9,9 +9,9 @@ public class ManejoUsuariosJDBC {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         List<Usuario> usuarios = new ArrayList<>();
         
-        usuarioDAO.insertar(new Usuario("Angel", "1manzanaGrande"));
+        //  usuarioDAO.insertar(new Usuario("Angel", "1manzanaGrande"));
         
-        //  usuarios = usuarioDAO.seleccionar();
+        usuarios = usuarioDAO.seleccionar();
         
         usuarios.forEach(usuario -> {
             System.out.println("usuario = " + usuario);
