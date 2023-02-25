@@ -13,6 +13,7 @@ import javax.servlet.http.*;
 
 @WebServlet("/HoraServlet")
 public class HoraServlet extends HttpServlet{
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");
         

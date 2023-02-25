@@ -10,6 +10,7 @@ import javax.servlet.http.*;
  */
 @WebServlet("/GeneracionExcelServlet")
  public class GeneracionExcelServlet extends HttpServlet{
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //  indicamos el tipo de respuesta al navegador
         response.setContentType("application/vnd.ms-excel");
