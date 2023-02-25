@@ -23,7 +23,7 @@ public class TestPersona {
             
             //  instruccion para testear el rollback:
             //  personaDAO.insertar(new Persona("Palaalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "UwU", "palaaa@mail.com", "5588226633"));
-            
+            personaDAO.actualizar(new Persona(2, "Sebastian", "Lopez", "sebastian@email.com", "1122334455"));
             personas = personaDAO.seleccionar();
             
             personas.forEach(persona -> {
