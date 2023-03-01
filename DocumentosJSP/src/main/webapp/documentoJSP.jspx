@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : documentoJSP
+    Created on : 28 feb. 2023, 19:45:51
+    Author     : asebastian36
+-->
+
+<!-- se diferencia de un jsp normal, porque la terminacion es .jspx -->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    
+    <!-- uso de declaraciones en jspx -->
+    <jsp:declaration>
+        private int contadorVisitas = 1;
+    </jsp:declaration>
+    
+    <html>
+        <body>
+            <h1>Ejemplo de un documento JSPX</h1>
+            <jsp:text>Saludos desde un documentoJSPX</jsp:text>
+            <br/>
+            <!-- ejemplo de expresion con JSPX -->
+            <jsp:expression>2*3</jsp:expression>
+            <br/>
+            <!-- Ejemplo de Scriptlet -->
+            <jsp:scriptlet>
+                String nombreAplicacion = request.getContextPath();
+            </jsp:scriptlet>
+            Nombre de la aplicacion: <jsp:expression>nombreAplicacion</jsp:expression>
+            <br/>
+            <jsp:expression>this.contadorVisitas++</jsp:expression>
+        </body>
+    </html>
+</jsp:root>
