@@ -3,12 +3,21 @@
     Created on : 4 mar. 2023, 12:35:26
     Author     : asebastian36
 --%>
+<%-- 
+    Se recomienda que el JPS que procese los errores sea privado
+    (que no se pueda acceder por el navegador) se recomienda crearlo
+    en la carpeta web inf, entonces si sucede un error se redirigira a 
+    manejo errores JSP
+--%>
+<%@page errorPage="/WEB-INF/manejoErrores.jsp" %>
 <%@page import="utilerias.Conversiones, java.util.Date" %>
 <%@page contentType="application/vnd.ms-excel" %>
 <% 
     //  indicamos que descargaremos un excel llamado reporte.xls
     String nombreArchivo = "reporte.xls";
-    response.setHeader("Content-Disposition", "attachment;filename=" + nombreArchivo);
+    //  inline para que se pueda procesar la excepcion y se descargue
+    //  attachment para descargar
+    response.setHeader("Content-Disposition", "inline;filename=" + nombreArchivo);
 %>
 <!DOCTYPE html>
 <html>
