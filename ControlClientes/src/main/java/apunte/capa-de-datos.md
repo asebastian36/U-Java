@@ -28,3 +28,8 @@ Aplicar un `Clean and Build` para descargar las dependencias.
 
 Esta clase permite la conexion con la base de datos y obtener una conexion del pull
 de conexiones
+
+## Creacion de la clase DAO de la clase entidad
+
+Tiene el nombre de `ClienteDAOJDBC.java` se encargara de interactuar con nuestra
+tabla de la base de datos (almacenada en el paquete de datos). Tiene metodos para lista, actualizar, agregar, eliminar y actualizar registros de la tabla clientes.
