@@ -12,7 +12,7 @@ import java.util.*;
 public class ClienteDAOJDBC {
 
     private static final String SQL_SELECT = "SELECT id_cliente, nombre, apellido, email, telefono, saldo" + " FROM cliente";
-    private static final String SQL_SELECT_BY_ID = "SELECT id_cliente, nombre, apellido, email, telefono, saldo" + "FROM id_cliente = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT id_cliente, nombre, apellido, email, telefono, saldo " + "FROM cliente WHERE id_cliente = ?";
     private static final String SQL_INSERT = "INSERT INTO cliente(nombre, apellido, email, telefono, saldo) " + " VALUES(?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE cliente " + "SET nombre=?, apellido=?, email=?, telefono=?, saldo=? WHERE id_cliente=?";
     private static final String SQL_DELETE = "DELETE FROM cliente WHERE id_cliente=?";
@@ -26,7 +26,7 @@ public class ClienteDAOJDBC {
         
         try {
             conexion = Conexion.getConnection();
-            statement = conexion.prepareStatement(SQL_INSERT);
+            statement = conexion.prepareStatement(SQL_SELECT);
             result = statement.executeQuery();
             
             while(result.next()) {
@@ -63,7 +63,6 @@ public class ClienteDAOJDBC {
             //  para posicionarse en el primer de la primer columna del registro
             //  encontrado
             result.absolute(1);
-            int idCliente = result.getInt("id_cliente");
             String nombre = result.getString("nombre");
             String apellido = result.getString("apellido");
             String email = result.getString("email");
@@ -75,9 +74,7 @@ public class ClienteDAOJDBC {
             cliente.setEmail(email);
             cliente.setTelefono(telefono);
             cliente.setSaldo(saldo);
-            
-            statement.executeUpdate();
-            
+                     
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         } finally {
