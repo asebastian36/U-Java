@@ -4,8 +4,6 @@
     Author     : Angel Franco
 --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,16 +21,16 @@
     </head>
     <body>
         <!-- cabecero -->
-        <jsp:include page="WEB-INF/paginas/comunes/cabecero.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecero.jsp"/>
 
         <!-- botones de navegacion -->
-        <jsp:include page="WEB-INF/paginas/comunes/botonesNavegacion.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacion.jsp"/>
 
         <!-- listado clientes -->
-        <jsp:include page="WEB-INF/paginas/cliente/listadoClientes.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/cliente/listadoClientes.jsp"/>
 
         <!-- pie de pagina -->
-        <jsp:include page="WEB-INF/paginas/comunes/piePagina.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/comunes/piePagina.jsp"/>
 
         <%-- para incluir el js requerido por bootstrap --%>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -58,6 +58,7 @@ public class ClienteDAOJDBC {
         try {
             conexion = Conexion.getConnection();
             statement = conexion.prepareStatement(SQL_SELECT_BY_ID);
+            statement.setInt(1, cliente.getIdCliente());
             result = statement.executeQuery();
             
             //  para posicionarse en el primer de la primer columna del registro

@@ -17,15 +17,20 @@ public class Conexion {
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "L4c1b0rgv4c4#";
     
+    private static BasicDataSource dataSource;
+    
     //  recupera la conexion con la bd
     public static DataSource getDataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
+        if (Conexion.dataSource == null) {
+        dataSource = new BasicDataSource();
         dataSource.setUrl(JDBC_URL);
         dataSource.setUsername(JDBC_USER);
         dataSource.setPassword(JDBC_PASSWORD);
         
         //  establecemos el poll de conexiones se especificaron 50 conexiones
         dataSource.setInitialSize(50);
+        }
+        
         return dataSource;
     }
     
