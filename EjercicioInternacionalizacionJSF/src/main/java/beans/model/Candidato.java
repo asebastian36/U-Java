@@ -22,7 +22,6 @@ public class Candidato {
     
     public Candidato() {
         log.info("Creando el objeto Candidato");
-        this.setNombre("Introduce tu nombre");
     }
 
     public String getApellido() {
