@@ -14,10 +14,13 @@ import org.apache.logging.log4j.Logger;
 @Named
 @RequestScoped
 public class Candidato {
-    private String nombre = "";
+    private String nombre;
     private String apellido;
     private int salarioDeseado;
     private Date fechaNacimiento;
+    private String codigoPostal;
+    private String colonia;
+    private String ciudad;
     Logger log = LogManager.getRootLogger();
     
     public Candidato() {
@@ -57,6 +60,33 @@ public class Candidato {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-        log.info("Modificando la propiedad de fecha de nacimiento" + this.fechaNacimiento);
+        log.info("Modificando la propiedad de fecha de nacimiento: " + this.fechaNacimiento);
+    }
+
+    public String getCodigoPostal() {
+        return this.codigoPostal;
+    }
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
+        log.info("Modificando la propiedad de codigo postal: " + this.codigoPostal);
+    }
+
+    public String getColonia() {
+        return this.colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+        log.info("Modificando la propiedad de colonia: " + this.colonia);
+    }
+
+    public String getCiudad() {
+        return this.ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+        log.info("Modificando la propiedad de ciudad: " + this.ciudad);
     }
 }

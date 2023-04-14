@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h:form>
+        <h:form id="vacanteForm">
             <h:messages globalOnly="true"></h:messages>
             <table>
                 <tr>
@@ -32,6 +32,25 @@
                         <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText></td>
                     <td><h:message for="fechaNacimiento"></h:message></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="codigoPostal" value="#{msjs['vacanteForm.codigoPostal']}"></h:outputLabel></td>
+                    <td><h:inputText id="codigoPostal" immediate="true" onchange="this.form.submit" required="true" value="#{candidato.codigoPostal}"
+                                     valueChangeListener="#{vacanteForm.CodigoPostalListener}">
+                    </h:inputText></td>
+                    <td><h:message for="codigoPostal"></h:message></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="colonia" value="#{msjs['vacanteForm.colonia']}"></h:outputLabel></td>
+                    <td><h:inputText id="colonia" required="true" value="#{candidato.colonia}">
+                    </h:inputText></td>
+                    <td><h:message for="colonia"></h:message></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="ciudad" value="#{msjs['vacanteForm.ciudad']}"></h:outputLabel></td>
+                    <td><h:inputText id="ciudad" required="true" value="#{candidato.ciudad}">
+                    </h:inputText></td>
+                    <td><h:message for="ciudad"></h:message></td>
                 </tr>
             </table>
             <h:commandButton action="#{vacanteForm.enviar}" value="#{msjs['vacanteForm.enviar']}"></h:commandButton>
