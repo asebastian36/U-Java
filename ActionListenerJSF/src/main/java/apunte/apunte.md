@@ -1,33 +1,22 @@
-# Value change listeners en JSF
+# Action listeners en JSF
 
-JSF provee dos maneras de detectar cambios (value change) en los componentes, ya sea agregando un
-atributo `valueChangeListener` al componente o como un elemento interno. Por ejemplo:
+JSF provee dos maneras de configurar la deteccion de eventos cuando un usuario ejecuta una accion de tipo
+`submit`, ya sea agregando el atributo `actionListener` al componente JSF o como elemento interno en el
+componente.
 
-Revision del codigo de la vista
+Algunos componentes que pueden manejar este tipo de eventos son `h:commandoButton` y `h:commandLink`.
+
+Codigo en la pagina JSF:
 
 ```xhtml
-<h:inputText id="codigoPostal" onchange="this.form.submit()"
-value="#{empleadoBean.codigoPostal}"
-valueChangeListener="#{vacanteForm.codigoPostalListener}" />
+<h:commandLink actionListener="#{vacanteForm.enviar}">
 ```
 
-El atributo de `valueChangeListener` tiene asociado un `Bean` y ese Bean va a mandar a llamar
-directamente el metodo `codigoPostalListener`, entonces una vez que el usuario haga algun cambio
-en ese `InputText` se manda a llamar el atributo `onchange` y automaticamente se manda a llamar
-el codigo Java respectivo asociado con este Bean `vacanteForm`.
+Una vez definido el atributo o elemento interno, se debe agregar el metodo action en el `Managed Bean` que
+procesa la peticion de la vista, ejemplo:
 
-Esto permite llamar de manera muy simplificada eventos del lado del servidor de Java directamente
-asociados con nuestras paginas JSF.
-
-Los `listeners` en JSF nos permiten responder a eventos que suceden en la vista para enlazar el evento
-al controlador y procesar el cambio en el componente, estos componentes deben implementar la
-interfaz `EditableValueHolder`.
-
-Una vez definido el atributo o elemento interno, se debe agregar el metodo action en el `Managed
-Bean` que escucha el cambio en la vista.
-
-Codigo que hay que agregar al `Managed Bean`:
-
-```Java
-public void codigoPostalListener(ValueChangeEvent valueChangeEvent) {...}
+```java
+public void enviar(ActionEvent actionEvent) {...}
 ```
+
+Esto nos permitira procesar formularios desde la vista del cliente.
