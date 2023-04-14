@@ -1,19 +1,17 @@
 # Cambios con respecto al proyecto anterior
 
-Cambios a la clase `Candidato` del paquete `beans.model` se agregaran atributos para trabajar con el
-concepto de `value change listener`.
+Se agregara un campo de formulario que se mustre o se oculte segun la accion que hagamos.
 
-Despues modificamos el `VacanteForm` en el paquete `beans.backing` para agregar el metodo de `value change
-listener` en este caso se llamo `CodigoPostalListener`
+El primer cambio que se hizo fue agregar el campo de `comentario` a la clase `Candidato` en el paquete
+`beans.model` incluyendo los metodos `set` y `get`
 
-> Se requiere que los elementos de la vista tengan un `id` para poder ser accedidos por el `UIViewRoot`
+Despues agregaremos el campo `comentario` al formulario en el `index.xhtml`, se utilizo un `h:commandLink`
+en el que se utilizo la propiedad `rendered` que ayuda a hacer visible o no segun la condicion, en este
+caso la condicion sera de un atributo del `Managed Bean` de `VacanteForm`, estos `action listeners` solo
+son condicionales, pero si se cumple la condicion se mostrara en un `h:panelGroup` que contiene una tabla
+con el comentario a mostrar.
 
-Posteriormente modificamos el `index.xhtml` para que los id que definimos en el `vacanteForm` funcionen y
-se agregaran los nuevos atributos al formulario.
+Posteriormente modificamos el Bean de `VacanteForm` para poder procesar los `action listener` definidos en
+el formulario.
 
-En la etiqueta `h:inputText` del atributo `colonia` se agregaran algunas propiedades extra como `immediate`
-para hacer que este atributo se proceso de inmediato una vez modificado este valor, se agrego la propiedad
-`onchange` para que se haga el envio del formulario y despues se agrego la propiedad de
- `valueChangeListener` para mandar a llamar el metodo `value change listener` definido en `vacanteForm`.
-
-Por ultimo se agregaron los nuevos atributos a los properties de mensajes tanto en ingles como en español.
+Por ultimo incluimos los mensajes extra del formulario en los `mensajes` en ingles y español.

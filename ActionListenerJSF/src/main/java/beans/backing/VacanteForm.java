@@ -6,6 +6,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIInput;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -24,6 +25,7 @@ public class VacanteForm {
     @Inject
     //  agregando la inyeccion del tipo Candidato
     private Candidato candidato;
+    private boolean comentarioEnviado;
     
     Logger log = LogManager.getRootLogger();
     
@@ -33,6 +35,14 @@ public class VacanteForm {
 
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
+    }
+
+    public boolean isComentarioEnviado() {
+        return this.comentarioEnviado;
+    }
+
+    public void setComentarioEnviado(boolean comentarioEnviado) {
+        this.comentarioEnviado = comentarioEnviado;
     }
     
     //  redireccionamiento a otra pagina con condicional
@@ -83,6 +93,9 @@ public class VacanteForm {
             //  para mandar la respuesta con los cambios a la pagina
             facesContext.renderResponse();
         }
-            
+    }
+
+    public void ocultarComentario(ActionEvent actionEvent) {
+        this.comentarioEnviado = !this.comentarioEnviado;
     }
 }

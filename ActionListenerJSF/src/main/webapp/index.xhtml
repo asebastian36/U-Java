@@ -22,37 +22,57 @@
                 <tr>
                     <td><h:outputLabel for="salarioDeseado" value="#{msjs['vacanteForm.salarioDeseado']}"></h:outputLabel></td>
                     <td><h:inputText id="salarioDeseado" required="true" value="#{candidato.salarioDeseado}">
-                        <f:validateLongRange minimum="8000" maximum="30000"/>
-                    </h:inputText></td>
+                            <f:validateLongRange minimum="8000" maximum="30000"/>
+                        </h:inputText></td>
                     <td><h:message for="salarioDeseado"></h:message></td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="fechaNacimiento" value="#{msjs['vacanteForm.fechaNacimiento']}"></h:outputLabel></td>
                     <td><h:inputText id="fechaNacimiento" required="true" value="#{candidato.fechaNacimiento}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:inputText></td>
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:inputText></td>
                     <td><h:message for="fechaNacimiento"></h:message></td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="codigoPostal" value="#{msjs['vacanteForm.codigoPostal']}"></h:outputLabel></td>
                     <td><h:inputText id="codigoPostal" immediate="true" onchange="this.form.submit" required="true" value="#{candidato.codigoPostal}"
                                      valueChangeListener="#{vacanteForm.CodigoPostalListener}">
-                    </h:inputText></td>
+                        </h:inputText></td>
                     <td><h:message for="codigoPostal"></h:message></td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="colonia" value="#{msjs['vacanteForm.colonia']}"></h:outputLabel></td>
                     <td><h:inputText id="colonia" required="true" value="#{candidato.colonia}">
-                    </h:inputText></td>
+                        </h:inputText></td>
                     <td><h:message for="colonia"></h:message></td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="ciudad" value="#{msjs['vacanteForm.ciudad']}"></h:outputLabel></td>
                     <td><h:inputText id="ciudad" required="true" value="#{candidato.ciudad}">
-                    </h:inputText></td>
+                        </h:inputText></td>
                     <td><h:message for="ciudad"></h:message></td>
                 </tr>
             </table>
+            <table>
+                <tr>
+                    <td>
+                        <h:commandLink actionListener="#{vacanteForm.ocultarComentario}" immediate="true"
+                                       rendered="#{!vacanteForm.comentarioEnviado}" value="#{msjs['vacanteForm.mostrar']}" />
+                        <h:commandLink actionListener="#{vacanteForm.ocultarComentario}" immediate="true"
+                                       rendered="#{vacanteForm.comentarioEnviado}" value="#{msjs['vacanteForm.ocultar']}" />
+                    </td>
+                </tr>
+            </table>
+            <h:panelGroup rendered="#{vacanteForm.comentarioEnviado}">
+                <table>
+                    <tr>
+                        <td><h:outputLabel for="comentario" value="#{msjs['vacanteForm.comentario']}" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:inputTextarea id="comentario" cols="50" rows="10" value="#{candidato.comentario}" /></td>
+                    </tr>
+                </table>
+            </h:panelGroup>
             <h:commandButton action="#{vacanteForm.enviar}" value="#{msjs['vacanteForm.enviar']}"></h:commandButton>
         </h:form>
     </body>
