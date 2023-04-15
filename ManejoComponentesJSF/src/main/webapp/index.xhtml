@@ -41,10 +41,14 @@
                     <td><h:message for="codigoPostal"></h:message></td>
                 </tr>
                 <tr>
-                    <td><h:outputLabel for="colonia" value="#{msjs['vacanteForm.colonia']}"></h:outputLabel></td>
-                    <td><h:inputText id="colonia" required="true" value="#{candidato.colonia}">
-                        </h:inputText></td>
-                    <td><h:message for="colonia"></h:message></td>
+                    <td><h:outputLabel for="coloniaId" value="#{msjs['vacanteForm.coloniaId']}"></h:outputLabel></td>
+                    <td>
+                        <h:selectOneMenu id="coloniaId" required="true" value="#{candidato.coloniaId}">
+                            <f:selectItem itemLabel="#{msjs['vacanteForm.seleccione']}" itemValue="" />
+                            <f:selectItem itemLabel="Benito Juarez" itemValue="1" />
+                        </h:selectOneMenu>
+                    </td>
+                    <td><h:message for="coloniaId"></h:message></td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="ciudad" value="#{msjs['vacanteForm.ciudad']}"></h:outputLabel></td>

@@ -18,8 +18,8 @@ public class Candidato {
     private String apellido;
     private int salarioDeseado;
     private Date fechaNacimiento;
+    private int coloniaId;
     private String codigoPostal;
-    private String colonia;
     private String ciudad;
     private String comentario;
     Logger log = LogManager.getRootLogger();
@@ -73,15 +73,6 @@ public class Candidato {
         log.info("Modificando la propiedad de codigo postal: " + this.codigoPostal);
     }
 
-    public String getColonia() {
-        return this.colonia;
-    }
-
-    public void setColonia(String colonia) {
-        this.colonia = colonia;
-        log.info("Modificando la propiedad de colonia: " + this.colonia);
-    }
-
     public String getCiudad() {
         return this.ciudad;
     }
@@ -97,5 +88,13 @@ public class Candidato {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public int getColoniaId() {
+        return this.coloniaId;
+    }
+
+    public void setColoniaId(int coloniaId) {
+        this.coloniaId = coloniaId;
     }
 }

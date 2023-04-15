@@ -76,14 +76,14 @@ public class VacanteForm {
         //  validacion para llenar los otros campos
         if("57000".equals(nuevoCodigoPostal)) {
             //  para ubicar a que campo del formulario va a ir la respuesta
-            UIInput coloniaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:colonia");
+            UIInput coloniIdaInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:coloniaId");
             
             //  definimos la respuesta
-            String colonia = "Benito Juarez";
+            int coloniaId = 1;
             
             //  la enviamos
-            coloniaInputText.setValue(colonia);
-            coloniaInputText.setSubmittedValue(colonia);
+            coloniIdaInputText.setValue(coloniaId);
+            coloniIdaInputText.setSubmittedValue(coloniaId);
             
             UIInput ciudadInputText = (UIInput) uiViewRoot.findComponent("vacanteForm:ciudad");
             String ciudad = "Nezahualcoyotl";
