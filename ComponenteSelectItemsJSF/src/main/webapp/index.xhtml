@@ -37,6 +37,7 @@
                     <td><h:outputLabel for="codigoPostal" value="#{msjs['vacanteForm.codigoPostal']}"></h:outputLabel></td>
                     <td><h:inputText id="codigoPostal" immediate="true" onchange="this.form.submit" required="true" value="#{candidato.codigoPostal}"
                                      valueChangeListener="#{vacanteForm.CodigoPostalListener}">
+                            <f:convertNumber integerOnly="true" pattern="00000" />
                         </h:inputText></td>
                     <td><h:message for="codigoPostal"></h:message></td>
                 </tr>
@@ -44,8 +45,7 @@
                     <td><h:outputLabel for="coloniaId" value="#{msjs['vacanteForm.coloniaId']}"></h:outputLabel></td>
                     <td>
                         <h:selectOneMenu id="coloniaId" required="true" value="#{candidato.coloniaId}">
-                            <f:selectItem itemLabel="#{msjs['vacanteForm.seleccione']}" itemValue="" />
-                            <f:selectItem itemLabel="Benito Juarez" itemValue="1" />
+                            <f:selectItems value="#{coloniaHelper.selectItems}" />
                         </h:selectOneMenu>
                     </td>
                     <td><h:message for="coloniaId"></h:message></td>
