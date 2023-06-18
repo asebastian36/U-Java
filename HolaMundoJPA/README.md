@@ -169,3 +169,20 @@ public class PersonaServiceBean implements PersonaService {
   }
 }
 ```
+
+## Notas
+
+* Se modifico el pom para que el proyecto use la version 1.8 de java, se agregaron dependencias como
+java ee, jpa, log4j, mysql y la implementacion de jpa con eclipse.
+
+* Se agrego la carpeta `resources` en la ruta `src/main` para agregar ahi archivos de configuracion.
+
+* Se creo el `log4j2.xml` en la carpeta resources, este archivo es para definir como seran los mensajes
+del logger.
+
+* Creacion de la clase `Persona` que estara vinculada a una tabla de la bd.
+
+* Se agrego la carpeta `META-INF` dentro de `resources` para crear un xml llamado `persistence` es el
+archivo de configuracion de JPA.
+
+* Se agrego una clase test.
