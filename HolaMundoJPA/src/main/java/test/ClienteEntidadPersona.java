@@ -21,7 +21,6 @@ public class ClienteEntidadPersona {
         //  iniciar la transaccion
         entityTransaction.begin();
         
-        //  no se debe especificar el id
         Persona persona = new Persona("Barbara", "Franco", "barbara@mail.com", "7777777777");
         log.debug("objeto a persistir: " + persona);
         
