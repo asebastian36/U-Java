@@ -1,38 +1,47 @@
 package mx.com.gm.sga.domain;
 
 import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  *
- * @author Angel Franco
+ * @author angel
  */
+
+@Entity
+@NamedQueries({
+    @NamedQuery(name="Persona.listar", query="SELECT p FROM Persona p ORDER BY p.id")
+})
 
 public class Persona implements Serializable{
     private static final long serialVersionUID = 1L;
-    private int idPersona;
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+    
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
-    
+
     public Persona() {
-    
+        
     }
 
-    public Persona(int idPersona, String nombre, String apellido, String email, String telefono) {
-        this.idPersona = idPersona;
+    public Persona(String nombre, String apellido, String email, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
     }
 
-    public int getIdPersona() {
-        return this.idPersona;
+    public int getId() {
+        return this.id;
     }
 
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -69,8 +78,6 @@ public class Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono;
+        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + '}';
     }
-    
-    
 }

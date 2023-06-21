@@ -1,9 +1,10 @@
 package mx.com.sga.servicio;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import mx.com.gm.sga.domain.Persona;
+import mx.com.sga.datos.PersonaDAO;
 
 /**
  *
@@ -13,37 +14,36 @@ import mx.com.gm.sga.domain.Persona;
 @Stateless
 public class PersonaServiceImpl implements PersonaServiceRemote, PersonaServiceLocal{
 
+    @Inject
+    private PersonaDAO repositorio;
+    
     @Override
     public List<Persona> listar() {
-        List<Persona> personas = new ArrayList<>();
-        personas.add(new Persona(1, "Angel", "Franco", "angel@mail.com", "1111111111"));
-        personas.add(new Persona(2, "Diego", "Franco", "diego@mail.com", "2222222222"));
-        return personas;
+        return repositorio.listar();
     }
 
     @Override
     public Persona buscar(int id) {
-        List<Persona> personas = listar();
-        
-        return (Persona) personas.stream().filter(persona -> persona.getIdPersona() == id);
+        return repositorio.buscar(id);
     }
 
     @Override
     public Persona buscar(String email) {
-        List<Persona> personas = listar();
-        
-        return (Persona) personas.stream().filter(persona -> persona.getEmail().equals(email));
+        return repositorio.buscar(email);
     }
 
     @Override
     public void registrar(Persona persona) {
+        repositorio.insertar(persona);
     }
 
     @Override
     public void modificar(Persona persona) {
+        repositorio.actualizar(persona);
     }
 
     @Override
     public void eliminar(Persona persona) {
+        repositorio.eliminar(persona);
     }
 }
