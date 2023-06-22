@@ -21,7 +21,7 @@ public class ClienteEntidadPersona {
         //  iniciar la transaccion
         entityTransaction.begin();
         
-        Persona persona = new Persona("Barbara", "Franco", "barbara@mail.com", "7777777777");
+        Persona persona = new Persona("Cleto", "Franco", "cleto@mail.com", "8888888888");
         log.debug("objeto a persistir: " + persona);
         
         //  agregar a la bd
