@@ -12,7 +12,9 @@
             <property name="eclipselink.logging.level.sql" value="FINE" />
             <property name="eclipselink.loggin.parameters" value="true" />
         </properties>
-        -->
+        
+    
+    -->
     <class>mx.com.gm.sga.domain.Usuario</class>
     <class>mx.com.gm.sga.domain.Persona</class>
   </persistence-unit>

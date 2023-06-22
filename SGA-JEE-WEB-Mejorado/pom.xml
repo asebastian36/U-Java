@@ -1,24 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>mx.uaemex</groupId>
-    <artifactId>HolaMundoJPA</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <groupId>mx.com.gm.sga</groupId>
+    <artifactId>SGA-JEE-WEB-Mejorado</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+    <name>SGA-JEE-WEB-Mejorado</name>
+    
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <exec.mainClass>HolaMundoJPA</exec.mainClass>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <jakartaee>8.0</jakartaee>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>8.0.1</version>
+            <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
             <version>2.2</version>
