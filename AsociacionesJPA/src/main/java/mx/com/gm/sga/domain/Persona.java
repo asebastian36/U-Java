@@ -32,7 +32,8 @@ public class Persona implements Serializable {
     @Size(max = 45)
     private String telefono;
     
-    @OneToMany(mappedBy = "persona")
+    //  uso del fetch de relaciones para cargar usuarios con las personas
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Usuario> usuarioList;
 
     public Persona() {

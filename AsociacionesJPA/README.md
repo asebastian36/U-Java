@@ -2,6 +2,13 @@
 
 Se copio el proyecto anterior **SGA-JEE-WEB-Actualizacion**.
 
+## Cambios
+
+* Se agrego la clase `ClienteAsociacionesJPA` para ejemplicar las asociaciones y aplicar el uso del `fetc de relaciones`.
+* Se hicieron cambios en las relaciones de las clases de entidad de `Persona` y `Usuario` para cambiar el fetch de relaciones a `EAGER`.
+* Se borraron los cambios a los fetch de relaciones en las clases de entidad.
+* Se agregaron cambios en las clases de entidad para incluir la persistencia en cascada.
+
 ## Asociaciones en JPA
 
 En el contexto de Java Persistence API (JPA), las asociaciones se refieren a las **relaciones entre entidades en una base de datos relacional.** JPA proporciona una forma de mapear estas relaciones y gestionarlas de manera eficiente.
