@@ -18,7 +18,7 @@ public class PersistirObjeto {
         EntityTransaction tx = em.getTransaction();
         
         //  crear objeto
-        Persona persona = new Persona("Jesus Uriel", "Franco Gutierrez", "jesus@email.com", "1515151515");
+        Persona persona = new Persona("Salomon", "Franco Amador", "salomon@email.com", "1919191919");
         
         //  inicia la transaccion
         tx.begin();
