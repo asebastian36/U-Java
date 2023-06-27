@@ -4,6 +4,8 @@ Se copio el proyecto anterior **AsociacionesJPA**.
 
 ## Cambios
 
+* Creacion de la clase `PruebaJPQL` para probar las consultas de JPQL.
+
 ## Consultas con JPQL de JPA
 
 Java Persistence Query Language (JPQL) es un **lenguaje de consultas orientado a objetos diseñado específicamente para interactuar con bases de datos utilizando el estándar de persistencia de Java**, conocido como Java Persistence API (JPA). JPQL proporciona una forma declarativa y basada en consultas para acceder y manipular objetos persistentes almacenados en una base de datos relacional.
