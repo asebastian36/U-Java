@@ -4,7 +4,9 @@ Se copio el proyecto anterior **AsociacionesJPA**.
 
 ## Cambios
 
-* Creacion de la clase `PruebaJPQL` para probar las consultas de JPQL.
+* Cambios en la capa de servicio (en la implementacion) en el metodo de actualizar.
+* Cambios en el `persistence.xml` para volver a usar glassfish.
+* Cambio en la clase de `Persona` para eliminar temporalmente una validacion.
 
 ## Manejo de transacciones
 

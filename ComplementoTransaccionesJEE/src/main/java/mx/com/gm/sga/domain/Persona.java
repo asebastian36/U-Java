@@ -20,11 +20,11 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "id_persona")
     private Integer idPersona;
-    //  @Size(max = 45)
+    @Size(max = 45)
     private String nombre;
-    //  @Size(max = 45)
+    //@Size(max = 45)
     private String apellido;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
@@ -32,7 +32,6 @@ public class Persona implements Serializable {
     @Size(max = 45)
     private String telefono;
     
-    //  uso del fetch de relaciones para cargar usuarios con las personas
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Usuario> usuarioList;
 
@@ -122,4 +121,5 @@ public class Persona implements Serializable {
     public String toString() {
         return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + '}';
     }
+
 }

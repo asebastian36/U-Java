@@ -1,6 +1,8 @@
 package mx.com.gm.sga.servicio;
 
 import java.util.List;
+import javax.annotation.Resource;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import mx.com.gm.sga.datos.PersonaDao;
@@ -11,6 +13,9 @@ public class PersonaServiceImpl implements PersonaServiceRemote, PersonaService{
 
     @Inject
     private PersonaDao personaDao;
+    
+    @Resource
+    private SessionContext contexto;
     
     @Override
     public List<Persona> listarPersonas() {
@@ -34,7 +39,13 @@ public class PersonaServiceImpl implements PersonaServiceRemote, PersonaService{
 
     @Override
     public void modificarPersona(Persona persona) {
-        personaDao.updatePersona(persona);
+        try {
+            personaDao.updatePersona(persona);
+        } catch(Throwable t) {
+            contexto.setRollbackOnly();
+            t.printStackTrace(System.out);
+        }
+        
     }
 
     @Override
