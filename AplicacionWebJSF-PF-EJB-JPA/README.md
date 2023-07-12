@@ -4,6 +4,13 @@ Se copio el proyecto anterior **TransaccionesJEE**.
 
 ## Cambios
 
+* Agregamos al `pom.xml` la dependencia de primefaces.
+* Configuramos el `web.xml` para elegir los archivos con los que arrancara el proyecto.
+* eliminamos el `index.xhtml` y los listados de objetos.
+* eliminamos los servlets del paquete `web`.
+* Creacion del `index.xhtml` y el `listadoPersona.xhtml` que usan jsf.
+* Se agrego un bean para las personas y una clase para la configuracion del bean en el paquete `web`.
+
 ## Rol de JSF en Java EE
 
 JSF (JavaServer Faces) es un marco de trabajo de Java para construir interfaces de usuario basadas en la web. Forma parte de Java EE (Enterprise Edition) y se utiliza para desarrollar aplicaciones empresariales.
