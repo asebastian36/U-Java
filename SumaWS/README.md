@@ -1,6 +1,13 @@
 # Notas
 
+Este proyecto se empieza de cero.
+
 ## Cambios
+
+* Se agregaron dependencias al `pom.xml` de Java EE y de JAXB.
+* Se creo la interfaz `ServicioSumarWS` en el paquete `beans`.
+* Se agrego la implementacion de la interfaz en el mismo paquete.
+* Desplegamos el jar generado por el proyecto en el servidor de glashfish.
 
 ## Servicios web
 
