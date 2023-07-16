@@ -4,6 +4,11 @@ Se copio el proyecto anterior **SGA-WebService**.
 
 ## Cambios
 
+* Se agrego la dependencia de JAX-RS al `pom.xml`.
+* Creacion de la clase `PersonaServiceRS` en el paquete de `servicio`.
+* Modificaciones a la clase de entidad `Persona`.
+* Cambios en el archivo `web.xml` en la carpeta `Web pages/WEB-INF`
+
 ## REST Web Services en Java EE
 
 REST (Representational State Transfer) es un estilo arquitectónico para la creación de servicios web. REST se basa en la idea de utilizar HTTP como protocolo de transporte y los recursos web como modelo de datos.

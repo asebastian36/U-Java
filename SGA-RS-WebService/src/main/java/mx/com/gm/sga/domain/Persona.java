@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.*;
     @NamedQuery(name = "Persona.findByEmail", query = "SELECT p FROM Persona p WHERE p.email = :email"),
     @NamedQuery(name = "Persona.findByTelefono", query = "SELECT p FROM Persona p WHERE p.telefono = :telefono")})
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
