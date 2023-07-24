@@ -42,3 +42,6 @@
 /ClienteSGA-WebService/target/
 /SGA-RS-WebService/target/
 /ClienteSGA-RESTWS/target/
+/SGA-JEE-Seguridad/target/
+/ClienteEJBSeguridad/target/
+/Cliente-JAX-RS-Seguridad/target/

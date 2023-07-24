@@ -6,15 +6,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit t
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
     <h:head>
         <title>Sistema</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
         <h1>Sistema</h1>
+        Bienvenido: <h:outputText value="#{p:userPrincipal()}" />
         <h:form>
-            <h:commandButton value="Listar personas" action="listarPersonas"/>
+            <p:messages />
+            <p:panelGrid columns="1" rendered="#{p:ifGranted('ROLE_ADMIN') || p:ifGranted('ROLE_USER')}" >
+                <h:commandButton value="Listar personas" action="listarPersonas" />
+            </p:panelGrid>
         </h:form>
     </h:body>
 </html>

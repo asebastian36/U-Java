@@ -4,6 +4,13 @@ Se copio el proyecto anterior **SGA-RS-WebService**.
 
 ## Cambios
 
+* Cambios en la implementacion de la interfaz del paquete de `servicio` para implementar seguridad a la clase y a los respectivos metodos.
+* Cambios en el `web.xml`.
+* Cambios en el `index.xhtml`.
+* Se verifico que estuviera habilitada una funcion importante en el servidor de glassfish ruta de la configuracion: `view domain admin console -> configurations -> server-config -> security` para habilitar la opcion `Default Principal To Role Mapping`.
+* Despues se agregaron usuarios con roles asignados en el servidor en la ruta `view domain admin console -> configurations -> server-config -> security -> Realms -> file -> manage users`.
+* Se agrego el usuario admin, user y guest con la claves admin, user y guest con los roles de `ROLE_ADMIN, ROLE_USER, ROLE_GUEST`.
+
 ## Seguridad en Java EE
 
 La seguridad en Java EE es un conjunto de características y configuraciones que ayudan a proteger las aplicaciones Java EE de ataques. Estas características incluyen:
