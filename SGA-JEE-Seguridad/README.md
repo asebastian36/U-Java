@@ -10,6 +10,7 @@ Se copio el proyecto anterior **SGA-RS-WebService**.
 * Se verifico que estuviera habilitada una funcion importante en el servidor de glassfish ruta de la configuracion: `view domain admin console -> configurations -> server-config -> security` para habilitar la opcion `Default Principal To Role Mapping`.
 * Despues se agregaron usuarios con roles asignados en el servidor en la ruta `view domain admin console -> configurations -> server-config -> security -> Realms -> file -> manage users`.
 * Se agrego el usuario admin, user y guest con la claves admin, user y guest con los roles de `ROLE_ADMIN, ROLE_USER, ROLE_GUEST`.
+* Creacion del archivo `glassfish-ejb-jax.xml` en la ruta `web pages -> WEB-INF`.
 
 ## Seguridad en Java EE
 
